@@ -1,0 +1,20 @@
+# GitHub 仓库监控 Telegram 机器人 V2
+# 依赖包列表
+
+# Telegram Bot
+python-telegram-bot>=20.7
+
+# GitHub API
+PyGithub>=2.1.1
+
+# 数据处理
+python-dotenv>=1.0.0
+
+# Flask (用于 OAuth 回调)
+Flask>=2.3.0
+
+# HTTP 请求 (用于 OAuth)
+requests>=2.31.0
+
+# 可选依赖
+# APScheduler>=3.10.4  # 如果需要更复杂的定时任务

@@ -1,0 +1,23 @@
+# Docker Compose 配置
+version: '3.8'
+
+services:
+  github-monitor-bot:
+    build: .
+    container_name: github-monitor-bot
+    restart: unless-stopped
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - CHECK_INTERVAL=5
+      - LOG_LEVEL=INFO
+      - ENABLE_SCHEDULER=true
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    networks:
+      - bot-network
+
+networks:
+  bot-network:
+    driver: bridge
